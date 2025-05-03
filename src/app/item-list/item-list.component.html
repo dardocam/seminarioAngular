@@ -1,0 +1,25 @@
+<p>item-list works!</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Price</th>
+      <th>Description</th>
+      <th>Category</th>
+      <th>Image</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of items">
+      <td>{{ item.name }}</td>
+      <td>{{ item.price | currency }}</td>
+      <td>{{ item.description }}</td>
+      <td>{{ item.category }}</td>
+      <td>
+        <img [src]="item.imageUrl" alt="{{ item.name }}" class="w-16 h-16" />
+      </td>
+      <td><span class="stock" *ngIf="item.stock == 0">SIN STOCK</span></td>
+    </tr>
+  </tbody>
+</table>
