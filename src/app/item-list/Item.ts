@@ -5,4 +5,6 @@ export interface Item {
   price: number;
   imageUrl: string;
   category: string;
-  stock: number;}
+  stock: number;
+  quantity: number;
+}

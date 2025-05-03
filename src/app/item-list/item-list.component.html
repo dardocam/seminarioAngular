@@ -8,6 +8,7 @@
       <th>Description</th>
       <th>Category</th>
       <th>Image</th>
+      <th>Compra</th>
     </tr>
   </thead>
   <tbody>
@@ -20,6 +21,11 @@
         <img [src]="item.imageUrl" alt="{{ item.name }}" class="w-16 h-16" />
       </td>
       <td><span class="stock" *ngIf="item.stock == 0">SIN STOCK</span></td>
+      <td>
+        <button (click)="downQuantity(item)">-</button>
+        {{ item.quantity }}
+        <button (click)="upQuantity(item)">+</button>
+      </td>
     </tr>
   </tbody>
 </table>
